@@ -1,0 +1,178 @@
+/* ================================
+   GLOBAL STYLES
+   These rules apply to the whole page
+================================ */
+
+/* Import a clean Google Font — this loads a font from the internet */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+/* The * selector means "apply this to literally every element on the page" */
+* {
+  margin: 0; /* Remove all default spacing around elements */
+  padding: 0; /* Remove all default inner spacing */
+  box-sizing: border-box; /* Makes sizing more predictable — always include this */
+}
+
+body {
+  font-family: "Inter", sans-serif; /* Use our imported font */
+  background-color: #f8f9fa; /* A very light gray background */
+  color: #1a1a2e; /* Dark navy for all text */
+  line-height: 1.6; /* A bit of breathing room between lines of text */
+}
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+
+nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef; /* A subtle line separating nav from content */
+  padding: 1rem 0;
+  position: sticky; /* Stays at the top even when you scroll down */
+  top: 0;
+  z-index: 100; /* Makes sure it always appears above other elements */
+}
+
+/* This centers the nav content and limits its maximum width */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto; /* auto left+right margin = centered */
+  padding: 0 2rem;
+  display: flex; /* Flex puts children side by side */
+  justify-content: space-between; /* Logo on the left, links on the right */
+  align-items: center; /* Vertically centered */
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4f46e5; /* A nice indigo/purple — your brand color */
+  text-decoration: none; /* Remove the default underline from links */
+}
+
+/* The nav links list */
+.nav-links {
+  list-style: none; /* Remove the bullet points from the list */
+  display: flex;
+  gap: 2rem; /* Space between each link */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s; /* Smooth color change on hover */
+}
+
+/* The : is a "pseudo-class" — this rule only applies when hovering */
+.nav-links a:hover {
+  color: #4f46e5;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed); /* Purple gradient */
+  color: #ffffff;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9; /* Slightly transparent to create visual hierarchy */
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+/* The call-to-action button */
+.btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #4f46e5;
+  padding: 0.85rem 2rem;
+  border-radius: 50px; /* Very rounded — a "pill" shape */
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px); /* Floats up slightly on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   CATEGORIES SECTION
+================================ */
+
+.categories {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.categories h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a1a2e;
+}
+
+/* CSS Grid — this is how we create the card layout */
+/* auto-fill means "create as many columns as fit", minmax sets their size */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem; /* Space between cards */
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px); /* Cards lift up when you hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
